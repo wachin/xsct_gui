@@ -26,6 +26,7 @@ root.geometry("400x250")
 temperature_frame = ttk.Frame(root, padding="10")
 temperature_frame.pack(fill="x")
 
+ttk.Label(temperature_frame, text="2000 K").pack(side="left")
 temperature_label = ttk.Label(temperature_frame, text="Temperature (K)")
 temperature_label.pack()
 
@@ -46,6 +47,7 @@ temperature_value.pack()
 brightness_frame = ttk.Frame(root, padding="10")
 brightness_frame.pack(fill="x")
 
+ttk.Label(brightness_frame, text="0.200").pack(side="left")
 brightness_label = ttk.Label(brightness_frame, text="Brightness")
 brightness_label.pack()
 
