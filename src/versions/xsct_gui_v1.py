@@ -4,15 +4,8 @@ import subprocess
 from PIL import Image, ImageTk
 
 def update_xsct():
-    # Obtener valores redondeados
-    temperature = int(temperature_var.get())  # Redondear a enteros
-    brightness = round(brightness_var.get(), 3)  # Redondear a tres decimales
-
-    # Actualizar los valores mostrados en la interfaz
-    temperature_label.config(text=f"Temperature (K): {temperature}")  # Mostrar solo enteros
-    brightness_label.config(text=f"Brightness: {brightness:.3f}")  # Mostrar con tres decimales
-
-    # Ejecutar el comando con los valores
+    temperature = temperature_var.get()
+    brightness = brightness_var.get()
     subprocess.run(["xsct", str(temperature), str(brightness)])
 
 def create_gradient_image(width, height, start_color, end_color):
