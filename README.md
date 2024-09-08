@@ -17,7 +17,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 Puedes instalar los paquetes necesarios con el siguiente comando:
 
 ```
-sudo apt install python3-tk tk-dev xsct
+sudo apt install python3-tk tk-dev xsct python3-pil.imagetk
 ```
 
 ## Inicio del programa
