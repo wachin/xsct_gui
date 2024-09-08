@@ -23,6 +23,12 @@ sudo apt install python3-tk tk-dev xsct python3-all-dev python3-pil.imagetk
 
 **python3-pil.imagetk** (Biblioteca de imágenes de Python: módulo ImageTk "Python3") con este paquete no necesitamos usar pip install Pillow en Debian 12
 
+## Si no funciona instalar
+Instalar:
+```
+sudo apt install python3-full idle
+```
+
 ## Inicio del programa
 
 1. Abre una terminal.
