@@ -33,6 +33,17 @@ sudo apt install python3 python3-tk tk-dev xsct python3-all-dev python3-pil.imag
 paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.
 **python3-pil.imagetk** Biblioteca de imágenes de Python: módulo ImageTk "Python3". Con este paquete no necesitamos instalar: "pip install Pillow" en Debian 12, es decir tenemos Pillow nativo. Pillow es un fork moderno de PIL (Python Imaging Library), tiene funcionalidades como crear y mostrar imágenes simples. Cuando importamos "from PIL import Image", ImageTk en el script, está utilizando esta versión de Pillow.
 **cairosvg** Este paquete es para que el programa pueda manejar iconos svg
+**Papirus Icon Theme** Es necesario para el icono del programa, si usa MX Linux 21, 23 está presente en los repositorios, pero sino lo pueden instalar:
+
+**Añadir el repositorio de MX Linux a Debian 12, 11, 10 y a S.O. Linux basados en el**
+https://facilitarelsoftwarelibre.blogspot.com/2023/11/como-anadir-el-repositorio-de-mx-linux-en-basados-en-debian.html
+
+También instalar directamente:
+
+**Papirus Icon Theme**
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+
+
 
 ## En caso de que no funcione instale
 Instalar lo siguiente:
