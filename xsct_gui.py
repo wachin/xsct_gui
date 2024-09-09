@@ -15,7 +15,7 @@ def update_xsct():
     temperature_label.config(text=f"Temperature (K): {temperature}")  # Mostrar solo enteros
     brightness_label.config(text=f"Brightness: {brightness:.3f}")  # Mostrar con tres decimales
 
-    # Ejecutar el comando con los valores
+    # Ejecutar el comando con los valores para xsct
     subprocess.run(["xsct", str(temperature), str(brightness)])
 
 # The script uses the create_gradient_image function to generate the gradient images dynamically,

@@ -97,6 +97,6 @@ Este programa es una interfaz gráfica de usuario para xsct, puedes revisar este
 
 https://github.com/faf0/sct
 
-En Debian 12 está en los repositorios con el nombre xsct. En Debian 11 y derivados es el paquete sct https://packages.debian.org/bullseye/sct y en Buster: https://packages.debian.org/buster/sct
+En Debian 12 está en los repositorios con el nombre xsct. En Debian 11 y derivados es el paquete sct https://packages.debian.org/bullseye/sct y en Buster: https://packages.debian.org/buster/sct pero para usarlo allí hay que editar el programa y cambiar xsct por sct.
 
 Dios les bendiga
