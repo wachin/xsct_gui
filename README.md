@@ -1,7 +1,7 @@
 # xsct_gui
 Una GUI (Interfaz Gráfica de Usuario) para xsct (para establecer la temperatura del color de la pantalla).
 
-xsct es un pequeño programa en C para cambiar la temperatura de color de la pantalla. Se puede utilizar para reducir o aumentar la cantidad de luz azul que produce la pantalla.
+**xsct** es un pequeño programa en C para cambiar la temperatura de color de la pantalla. Se puede utilizar para reducir o aumentar la cantidad de luz azul que produce la pantalla.
 
 La herramienta xsct establece la temperatura de color de la pantalla a través de xrandr como redshift. A diferencia de redshift, solo tiene 80 líneas de C y no cambiará la temperatura de la pantalla automáticamente.
 
@@ -17,6 +17,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 2. Tkinter (paquete python3-tk)
 3. Tk development files (paquete tk-dev)
 4. El programa xsct
+5. Papirus Icon Theme
 
 Puedes instalar los paquetes necesarios con el siguiente comando:
 
@@ -26,12 +27,15 @@ sudo apt install python3 python3-tk tk-dev xsct python3-all-dev python3-pil.imag
 # Explicación de los paquetes
 
 **python3** el lenguaje interactivo de alto nivel y orientado a objetos, incluye una extensa biblioteca de clases con muchas funciones útiles para programación de redes, administración de sistemas, sonidos y gráficos. (Debe estar instalado por defecto)
-**python3-pil.imagetk** (Biblioteca de imágenes de Python: módulo ImageTk "Python3") con este paquete no necesitamos usar: "pip install Pillow" en Debian 12
+**python3-tk** Es un módulo para escribir aplicaciones GUI portátiles con Python 3.x utilizando Tk. También conocido como Tkinter.
+**tk-dev** Tk es un conjunto de herramientas gráficas multiplataforma que ofrece la apariencia de Motif y se implementa utilizando el lenguaje de programación Tcl.
+**python3-all-dev** Este paquete es un paquete de dependencia que se utiliza como dependencia de compilación para otros
+paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.
+**python3-pil.imagetk** Biblioteca de imágenes de Python: módulo ImageTk "Python3". Con este paquete no necesitamos instalar: "pip install Pillow" en Debian 12, es decir tenemos Pillow nativo. Pillow es un fork moderno de PIL (Python Imaging Library), tiene funcionalidades como crear y mostrar imágenes simples. Cuando importamos "from PIL import Image", ImageTk en el script, está utilizando esta versión de Pillow.
+**cairosvg** Este paquete es para que el programa pueda manejar iconos svg
 
-cairosvg Este paquete es para que el programa pueda manejar iconos svg
-
-## Si no funciona instalar
-Instalar:
+## En caso de que no funcione instale
+Instalar lo siguiente:
 ```
 sudo apt install python3-full idle
 ```
@@ -81,20 +85,18 @@ Los cambios se aplican automáticamente al mover los deslizadores. Sin embargo, 
 - Experimenta con diferentes combinaciones para encontrar lo que mejor se adapte a tus ojos y entorno (los focos que se utilicen en el lugar).
 
 
-
-
 ## Personalización
 
-Si deseas personalizar la interfaz o agregar nuevas funcionalidades, puedes editar el archivo `xsct_gui.py` con un editor de texto. Asegúrate de entender el código Python y Tkinter antes de hacer modificaciones.
+Si deseas personalizar la interfaz o agregar nuevas funcionalidades, puedes editar el archivo `xsct_gui.py` con un editor de texto.
 
 ¡Disfruta de una experiencia visual más cómoda con xsct GUI!
 
-# Sobre xsct
+# Extra sobre xsct
 
 Este programa es una interfaz gráfica de usuario para xsct, puedes revisar este programa en: 
 
 https://github.com/faf0/sct
 
-En Debian 12 está en los repositorios con el nombre xsct. Es posible que en Debian 11 y derivados sea el paquete sct.
+En Debian 12 está en los repositorios con el nombre xsct. En Debian 11 y derivados es el paquete sct https://packages.debian.org/bullseye/sct y en Buster: https://packages.debian.org/buster/sct
 
 Dios les bendiga
