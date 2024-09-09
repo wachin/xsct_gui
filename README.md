@@ -1,9 +1,13 @@
 # xsct_gui
-A GUI for xsct - set color temperature of screen
+Una GUI (Interfaz Gráfica de Usuario) para xsct (para establecer la temperatura del color de la pantalla).
+
+xsct es un pequeño programa en C para cambiar la temperatura de color de la pantalla. Se puede utilizar para reducir o aumentar la cantidad de luz azul que produce la pantalla.
+
+La herramienta xsct establece la temperatura de color de la pantalla a través de xrandr como redshift. A diferencia de redshift, solo tiene 80 líneas de C y no cambiará la temperatura de la pantalla automáticamente.
 
 # Tutorial de uso: xsct GUI
 
-Este tutorial te guiará a través del uso de la interfaz gráfica para el programa xsct, que te permite ajustar la temperatura de color y el brillo de tu monitor en Linux Debian 12 o derivados de ellos como MX Linux 23 y puede que funcione en otras versiones u otros Linux
+Este tutorial te guiará a través del uso de la interfaz gráfica para el programa xsct, que te permite ajustar la temperatura de color y el brillo de tu monitor en Linux Debian 12 o derivados de ellos como MX Linux 23 y puede que funcione en otras versiones u otros Linux.
 
 ## Requisitos previos
 
@@ -17,11 +21,14 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 Puedes instalar los paquetes necesarios con el siguiente comando:
 
 ```
-sudo apt install python3-tk tk-dev xsct python3-all-dev python3-pil.imagetk
+sudo apt install python3 python3-tk tk-dev xsct python3-all-dev python3-pil.imagetk cairosvg
 ```
 # Explicación de los paquetes
 
-**python3-pil.imagetk** (Biblioteca de imágenes de Python: módulo ImageTk "Python3") con este paquete no necesitamos usar pip install Pillow en Debian 12
+**python3** el lenguaje interactivo de alto nivel y orientado a objetos, incluye una extensa biblioteca de clases con muchas funciones útiles para programación de redes, administración de sistemas, sonidos y gráficos. (Debe estar instalado por defecto)
+**python3-pil.imagetk** (Biblioteca de imágenes de Python: módulo ImageTk "Python3") con este paquete no necesitamos usar: "pip install Pillow" en Debian 12
+
+cairosvg Este paquete es para que el programa pueda manejar iconos svg
 
 ## Si no funciona instalar
 Instalar:

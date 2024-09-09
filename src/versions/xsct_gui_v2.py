@@ -2,9 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 import subprocess
 from PIL import Image, ImageTk
-import os
-import cairosvg
-import io
 
 def update_xsct():
     # Obtener valores redondeados
@@ -18,11 +15,6 @@ def update_xsct():
     # Ejecutar el comando con los valores
     subprocess.run(["xsct", str(temperature), str(brightness)])
 
-# The script uses the create_gradient_image function to generate the gradient images dynamically,
-# so you don't need to include the SVG files.
-# This implementation should provide a user-friendly interface for adjusting your monitor's
-# temperature and brightness using the xsct command.
-# You can easily modify the script to add more features or adjust the appearance as needed.
 def create_gradient_image(width, height, start_color, end_color):
     gradient = Image.new("RGB", (width, 1))
     for x in range(width):
@@ -32,22 +24,10 @@ def create_gradient_image(width, height, start_color, end_color):
         gradient.putpixel((x, 0), (r, g, b))
     return gradient.resize((width, height), Image.NEAREST)
 
-# svg_to_photoimage function to convert SVG to a format that Tkinter can use.
-def svg_to_photoimage(path, size):
-    png_data = cairosvg.svg2png(url=path, output_width=size, output_height=size)
-    return ImageTk.PhotoImage(Image.open(io.BytesIO(png_data)))
-
 # Create the main window
 root = tk.Tk()
 root.title("xsct GUI")
 root.geometry("400x250")
-
-# Set the window icon
-icon_sizes = [16, 22, 24, 32, 48, 64]
-icon_paths = [f"/usr/share/icons/Papirus/{size}x{size}/apps/python.svg" for size in icon_sizes]
-icons = [svg_to_photoimage(path, size) for size, path in zip(icon_sizes, icon_paths) if os.path.exists(path)]
-if icons:
-    root.iconphoto(True, *icons)
 
 # Temperature selector
 temperature_frame = ttk.Frame(root, padding="10")
