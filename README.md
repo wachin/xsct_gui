@@ -25,7 +25,7 @@ Puedes instalar los paquetes necesarios con el siguiente comando:
 sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 ```
 
-**Nota**: En mi Sistema Linux Debian 12 tengo instalado además los siguientes paquetes: python3-all-dev tk-dev pero parece que no son necesarios.
+**Nota**: En mi Sistema Linux Debian 12 tengo instalado además los siguientes paquetes: python3-all-dev tk-dev python3-full idle pero parece que no son necesarios.
 
 # Explicación de los paquetes
 
@@ -49,12 +49,6 @@ https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 **tk-dev** Tk es un conjunto de herramientas gráficas multiplataforma que ofrece la apariencia de Motif y se implementa utilizando el lenguaje de programación Tcl.  
 **python3-all-dev** Este paquete es un paquete de dependencia que se utiliza como dependencia de compilación para otros
 paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.  
-
-## En caso de que no funcione instale
-Instalar lo siguiente:  
-```
-sudo apt install python3-full idle
-```
 
 ## Inicio del programa
 
