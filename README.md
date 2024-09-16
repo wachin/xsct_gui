@@ -111,6 +111,6 @@ Este programa es una interfaz gráfica de usuario para xsct, puedes revisar este
 
 https://github.com/faf0/sct
 
-En Debian 12 está en los repositorios con el nombre xsct. En Debian 11 y derivados es el paquete sct https://packages.debian.org/bullseye/sct y en Buster: https://packages.debian.org/buster/sct pero para usarlo allí hay que editar el programa y cambiar xsct por sct.
+En Debian 12 está en los repositorios con el nombre xsct. En Debian 11 y derivados es el paquete sct https://packages.debian.org/bullseye/sct y en Buster: https://packages.debian.org/buster/sct pero para usarlo allí hay que editar el programa con un editor de texto y cambiar xsct por sct guardar y cerrar (lo probé en Buster y funciona el "Ajuste de la temperatura de color" pero no funciona el "Ajuste de Brillo").
 
 Dios les bendiga
