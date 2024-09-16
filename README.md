@@ -15,7 +15,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
 1. Python 3
 2. Tkinter (paquete python3-tk)
-3. Tk development files (paquete tk-dev)
+3. python3-pil.imagetk (Biblioteca de imagenes)
 4. El programa xsct
 5. Papirus Icon Theme
 
@@ -31,11 +31,8 @@ sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 
 **python3** el lenguaje interactivo de alto nivel y orientado a objetos, incluye una extensa biblioteca de clases con muchas funciones útiles para programación de redes, administración de sistemas, sonidos y gráficos. (Debe estar instalado por defecto)
 **python3-tk** Es un módulo para escribir aplicaciones GUI portátiles con Python 3.x utilizando Tk. También conocido como Tkinter.
-**tk-dev** Tk es un conjunto de herramientas gráficas multiplataforma que ofrece la apariencia de Motif y se implementa utilizando el lenguaje de programación Tcl.
-**python3-all-dev** Este paquete es un paquete de dependencia que se utiliza como dependencia de compilación para otros
-paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.
-**python3-pil.imagetk** Biblioteca de imágenes de Python: módulo ImageTk "Python3". Con este paquete no necesitamos instalar: "pip install Pillow" en Debian 12, es decir tenemos Pillow nativo. Pillow es un fork moderno de PIL (Python Imaging Library), tiene funcionalidades como crear y mostrar imágenes simples. Cuando importamos "from PIL import Image", ImageTk en el script, está utilizando esta versión de Pillow.
-**cairosvg** Este paquete es para que el programa pueda manejar iconos svg
+**python3-pil.imagetk** Biblioteca de imágenes de Python: módulo ImageTk "Python3". Con este paquete no necesitamos instalar: "pip install Pillow", es decir tenemos Pillow nativo. Pillow es un fork moderno de PIL (Python Imaging Library) que tiene funcionalidades como crear y mostrar imágenes simples. Cuando importamos "from PIL import Image", ImageTk en el script, está utilizando esta versión de Pillow, esto sirve para mostrar los colores degradados de las barras estáticas de gradientes de temperatura y de brillo.
+**python3-cairosvg** Este paquete es para que el programa pueda manejar iconos svg ya que Papirus los usa en este formato y sin este paquete no muestra ningún icono.
 **Papirus Icon Theme** Es necesario para el icono del programa, si usa MX Linux 21, 23 está presente en los repositorios. Si usas otro Linux basado en Debian una manera rapida de instalar papirus si no está disponible es instalando los repositorios de MX Linux:
 
 **Añadir el repositorio de MX Linux a Debian 12, 11, 10 y a S.O. Linux basados en el**
@@ -47,6 +44,11 @@ También se puede instalar directamente desde la página del desarrollador:
 https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 
 
+### Opcionales:
+
+**tk-dev** Tk es un conjunto de herramientas gráficas multiplataforma que ofrece la apariencia de Motif y se implementa utilizando el lenguaje de programación Tcl.
+**python3-all-dev** Este paquete es un paquete de dependencia que se utiliza como dependencia de compilación para otros
+paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.
 
 ## En caso de que no funcione instale
 Instalar lo siguiente:
