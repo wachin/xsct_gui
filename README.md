@@ -22,8 +22,11 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 Puedes instalar los paquetes necesarios con el siguiente comando:
 
 ```
-sudo apt install python3 python3-tk tk-dev xsct python3-all-dev python3-pil.imagetk cairosvg
+sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 ```
+
+**Nota**: En mi Sistema Linux Debian 12 tengo instalado además los siguientes paquetes: python3-all-dev tk-dev pero parece que no son necesarios.
+
 # Explicación de los paquetes
 
 **python3** el lenguaje interactivo de alto nivel y orientado a objetos, incluye una extensa biblioteca de clases con muchas funciones útiles para programación de redes, administración de sistemas, sonidos y gráficos. (Debe estar instalado por defecto)
@@ -33,12 +36,12 @@ sudo apt install python3 python3-tk tk-dev xsct python3-all-dev python3-pil.imag
 paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.
 **python3-pil.imagetk** Biblioteca de imágenes de Python: módulo ImageTk "Python3". Con este paquete no necesitamos instalar: "pip install Pillow" en Debian 12, es decir tenemos Pillow nativo. Pillow es un fork moderno de PIL (Python Imaging Library), tiene funcionalidades como crear y mostrar imágenes simples. Cuando importamos "from PIL import Image", ImageTk en el script, está utilizando esta versión de Pillow.
 **cairosvg** Este paquete es para que el programa pueda manejar iconos svg
-**Papirus Icon Theme** Es necesario para el icono del programa, si usa MX Linux 21, 23 está presente en los repositorios, pero sino lo pueden instalar:
+**Papirus Icon Theme** Es necesario para el icono del programa, si usa MX Linux 21, 23 está presente en los repositorios. Si usas otro Linux basado en Debian una manera rapida de instalar papirus si no está disponible es instalando los repositorios de MX Linux:
 
 **Añadir el repositorio de MX Linux a Debian 12, 11, 10 y a S.O. Linux basados en el**
 https://facilitarelsoftwarelibre.blogspot.com/2023/11/como-anadir-el-repositorio-de-mx-linux-en-basados-en-debian.html
 
-También instalar directamente:
+También se puede instalar directamente desde la página del desarrollador:
 
 **Papirus Icon Theme**
 https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
