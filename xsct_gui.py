@@ -11,7 +11,7 @@ class AboutWindow(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
         self.title("Acerca de xsct_gui")
-        self.geometry("400x250")
+        self.geometry("420x450")
         self.resizable(False, False)
 
         text = tk.Text(self, wrap=tk.WORD, padx=10, pady=10, relief=tk.FLAT)
@@ -24,11 +24,16 @@ class AboutWindow(tk.Toplevel):
         text.insert(tk.END, "Una ")
         text.insert(tk.END, "GUI ", "italic")
         text.insert(tk.END, "(Interfaz Gráfica de Usuario) para xsct, para reducir o aumentar la cantidad de luz azul que produce la pantalla.\n\n")
-        text.insert(tk.END, "Copyright 2024  Washington Indacochea.\n")
+        text.insert(tk.END, "Copyright 2024  Washington Indacochea Delgado.\n")
+        text.insert(tk.END, "wachin.id@gmail.com\n")
         text.insert(tk.END, "Licencia: GNU GPL3. \n\n")
         text.insert(tk.END, "Este programa permite ajustar fácilmente la temperatura de color y el brillo de su pantalla, ayudando a reducir la fatiga visual y mejorar su experiencia de uso del ordenador.\n\n")
-        text.insert(tk.END, "Para más información, visite: ", "italic")
-        text.insert(tk.END, "https://github.com/faf0/sct\n")
+
+        text.insert(tk.END, "Para más información, visite: \n\n", "italic")
+        text.insert(tk.END, "xsct_gui una GUI para xsct\n")
+        text.insert(tk.END, "https://github.com/wachin/xsct_gui\n\n")
+        text.insert(tk.END, "Xsct (X11 set color temperature)\n")
+        text.insert(tk.END, "https://github.com/faf0/sct\n\n")
 
         text.config(state=tk.DISABLED)
 
