@@ -25,7 +25,7 @@ Puedes instalar los paquetes necesarios con el siguiente comando:
 sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 ```
 
-**Nota**: En mi Sistema Linux Debian 12 tengo instalado además los siguientes paquetes: python3-all-dev tk-dev pero parece que no son necesarios.
+**Nota**: En mi Sistema Linux Debian 12 tengo instalado además los siguientes paquetes: python3-all-dev tk-dev python3-full idle pero parece que no son necesarios.
 
 # Explicación de los paquetes
 
@@ -38,32 +38,19 @@ sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 **Añadir el repositorio de MX Linux a Debian 12, 11, 10 y a S.O. Linux basados en el**  
 https://facilitarelsoftwarelibre.blogspot.com/2023/11/como-anadir-el-repositorio-de-mx-linux-en-basados-en-debian.html  
 
-También se puede instalar directamente desde la página del desarrollador:  
+También se puede instalar directamente desde la página del desarrollador (vea las instrucciones):
 
 **Papirus Icon Theme**  
 https://github.com/PapirusDevelopmentTeam/papirus-icon-theme  
 
-
-### Opcionales:
-
-**tk-dev** Tk es un conjunto de herramientas gráficas multiplataforma que ofrece la apariencia de Motif y se implementa utilizando el lenguaje de programación Tcl.  
-**python3-all-dev** Este paquete es un paquete de dependencia que se utiliza como dependencia de compilación para otros
-paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.  
-
-## En caso de que no funcione instale
-Instalar lo siguiente:  
-```
-sudo apt install python3-full idle
-```
-
 ## Inicio del programa
 
 1. Abre una terminal.
-2. Navega hasta el directorio donde guardaste el archivo `xsct_gui.py`.
+2. Navega hasta el directorio donde guardaste el archivo `xsct_gui.py.
 3. Ejecuta el siguiente comando:  
 
    ```
-   python3 xsct_gui.py
+   python3 xsct.py
    ```
 
 4. Se abrirá la ventana de la interfaz gráfica de xsct.  
