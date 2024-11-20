@@ -105,7 +105,7 @@ temperature_value.pack()
 brightness_frame = ttk.Frame(root, padding="10")
 brightness_frame.pack(fill="x")
 
-ttk.Label(brightness_frame, text="0.200").pack(side="left")
+ttk.Label(brightness_frame, text="0.300").pack(side="left")
 brightness_label = ttk.Label(brightness_frame, text="Brightness")
 brightness_label.pack()
 
@@ -116,7 +116,7 @@ bright_gradient_label = ttk.Label(brightness_frame, image=bright_gradient_img)
 bright_gradient_label.pack()
 
 brightness_var = tk.DoubleVar(value=1.000)
-brightness_scale = ttk.Scale(brightness_frame, from_=0.200, to=1.000, variable=brightness_var, orient="horizontal", length=380, command=lambda _: update_xsct())
+brightness_scale = ttk.Scale(brightness_frame, from_=0.300, to=1.000, variable=brightness_var, orient="horizontal", length=380, command=lambda _: update_xsct())
 brightness_scale.pack()
 
 brightness_value = ttk.Label(brightness_frame, textvariable=brightness_var)
