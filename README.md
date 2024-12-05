@@ -126,7 +126,7 @@ aquí pongo una captura de pantalla:
 
 ## Dependencias para xsct_gui en Debian 11, 10
 1. Para usar la interfáz gráfica para xsct necesitamos instalar:
-```
+```bash
 sudo apt install python3 python3-tk python3-pil.imagetk python3-cairosvg
 ```
 y ahora si:
@@ -134,8 +134,8 @@ y ahora si:
 2. Navega hasta el directorio donde guardaste el archivo `xsct_gui.py`.
 3. Ejecuta el siguiente comando:  
 
-   ```bash
-   python3 xsct_gui.py
-   ```
+```python
+python3 xsct_gui.py
+```
 
 Dios les bendiga
