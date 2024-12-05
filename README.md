@@ -43,13 +43,6 @@ También se puede instalar directamente desde la página del desarrollador:
 **Papirus Icon Theme**  
 https://github.com/PapirusDevelopmentTeam/papirus-icon-theme  
 
-
-### Opcionales:
-
-**tk-dev** Tk es un conjunto de herramientas gráficas multiplataforma que ofrece la apariencia de Motif y se implementa utilizando el lenguaje de programación Tcl.  
-**python3-all-dev** Este paquete es un paquete de dependencia que se utiliza como dependencia de compilación para otros
-paquetes para evitar dependencias codificadas de forma rígida en paquetes de desarrollo de Python 3 específicos.  
-
 ## Inicio del programa
 
 1. Abre una terminal.
@@ -101,23 +94,48 @@ Si deseas personalizar la interfaz o agregar nuevas funcionalidades, puedes edit
 
 ¡Disfruta de una experiencia visual más cómoda con xsct GUI!
 
-# Extra sobre xsct
+# Para Instalar en Debian 11 bullseye, Debian 10 buster, compilar sct
+Necesitamos las siguientes dependencias para poder compilar el código fuente y que se pueda instalar xsct en Debian 11, 10:
 
-Este programa es una interfaz gráfica de usuario para xsct, puedes revisar este programa en: 
+```bash
+sudo apt install libx11-dev libxrandr-dev
+```
+Luego, clone el repositorio de xsct:
 
-https://github.com/faf0/sct
+```
+git clone https://github.com/faf0/sct
+```
+y entre allí
+```
+cd sct
+```
+y compilelo:
 
-En Debian 12 está en los repositorios con el nombre xsct. 
+```
+make
+```
 
+no se demora mucho en compilar, es rapidísimo, e instálelo:
 
+```
+sudo make install
+```
+aquí pongo una captura de pantalla:
 
+![](src/vx_images/02-sct-compilado-en-debian-11-10.png)
 
-
+## Dependencias para xsct_gui en Debian 11, 10
+1. Para usar la interfáz gráfica para xsct necesitamos instalar:
 ```
 sudo apt install python3 python3-tk python3-pil.imagetk python3-cairosvg
 ```
+y ahora si:
 
+2. Navega hasta el directorio donde guardaste el archivo `xsct_gui.py`.
+3. Ejecuta el siguiente comando:  
 
-En Debian 11 y derivados es el paquete sct https://packages.debian.org/bullseye/sct y en Buster: https://packages.debian.org/buster/sct pero para usarlo allí hay que editar el programa con un editor de texto y cambiar xsct por sct guardar y cerrar (lo probé en Buster y funciona el "Ajuste de la temperatura de color" pero no funciona el "Ajuste de Brillo").
+   ```bash
+   python3 xsct_gui.py
+   ```
 
 Dios les bendiga
