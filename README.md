@@ -9,20 +9,7 @@ La herramienta xsct establece la temperatura de color de la pantalla a través d
 
 Este tutorial te guiará a través del uso de xsct_gui el cual es una interfaz gráfica para el programa xsct, que te permite ajustar la temperatura de color y el brillo de tu monitor en Linux
 
-# xsct está disponible en las siguientes Distribuciones Linux
-Este tutorial es para Distribuciones Linux que usan el sistema de paquetería deb como son:
 
-Debian 12 en adelante (como en MX Linux 23, antiX 23)
-https://packages.debian.org/xsct
-
-Ubuntu 24.04 en adelante
-https://packages.ubuntu.com/xsct
-
-
-Puede que xsct esté disponible en otras Distribuciones, pero debe buscar cómo instalar las dependencias correctamente, como en:
-
-Software Opensuse
-https://software.opensuse.org/package/xsct
 
 
 ## Requisitos previos
@@ -48,15 +35,40 @@ sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 **python3-tk** Es un módulo para escribir aplicaciones GUI portátiles con Python 3.x utilizando Tk. También conocido como Tkinter.  
 **python3-pil.imagetk** Biblioteca de imágenes de Python: módulo ImageTk "Python3". Con este paquete no necesitamos instalar: "pip install Pillow", es decir tenemos Pillow nativo. Pillow es un fork moderno de PIL (Python Imaging Library) que tiene funcionalidades como crear y mostrar imágenes simples. Cuando importamos "from PIL import Image", ImageTk en el script, está utilizando esta versión de Pillow, esto sirve para mostrar los colores degradados de las barras estáticas de gradientes de temperatura y de brillo.  
 **python3-cairosvg** Este paquete es para que el programa pueda manejar iconos svg ya que Papirus los usa en este formato y sin este paquete no muestra ningún icono.  
-**Papirus Icon Theme** Es necesario para el icono del programa, si usa MX Linux 21, 23 está presente en los repositorios. Si usas otro Linux basado en Debian una manera rapida de instalar papirus si no está disponible es instalando los repositorios de MX Linux:  
+**Papirus Icon Theme** Es necesario para el icono del programa. En caso de no estar en los repositorios de su Linux se puede instalar desde la [página del desarrollador](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) 
 
-**Añadir el repositorio de MX Linux a Debian 12, 11, 10 y a S.O. Linux basados en el**  
-https://facilitarelsoftwarelibre.blogspot.com/2023/11/como-anadir-el-repositorio-de-mx-linux-en-basados-en-debian.html  
+# xsct y las dependencias están disponible en las siguientes Distribuciones Linux
+Este tutorial es para Distribuciones Linux que usan el sistema de paquetería deb como son:
 
-También se puede instalar directamente desde la página del desarrollador:  
+**Debian**
 
-**Papirus Icon Theme**  
-https://github.com/PapirusDevelopmentTeam/papirus-icon-theme  
+xsct desde Debian 12 (también en MX Linux 23, antiX 23 y otros basados en este)  
+[https://packages.debian.org/xsct](https://packages.debian.org/xsct)
+
+desde Debian 10  
+[https://packages.debian.org/papirus-icon-theme](https://packages.debian.org/papirus-icon-theme)  
+[https://packages.debian.org/python3](https://packages.debian.org/python3)  
+[https://packages.debian.org/python3-tk](https://packages.debian.org/python3-tk)  
+[https://packages.debian.org/python3-pil.imagetk](https://packages.debian.org/python3-pil.imagetk)  
+[https://packages.debian.org/python3-cairosvg](https://packages.debian.org/python3-cairosvg)  
+
+
+**Ubuntu**
+
+desde Ubuntu 24.04  
+[https://packages.ubuntu.com/xsct](https://packages.ubuntu.com/xsct)
+
+Desde Ubuntu 20.04
+[https://packages.ubuntu.com/papirus-icon-theme](https://packages.ubuntu.com/papirus-icon-theme)  
+[https://packages.ubuntu.com/python3](https://packages.ubuntu.com/python3)  
+[https://packages.ubuntu.com/python3-tk](https://packages.ubuntu.com/python3-tk)  
+[https://packages.ubuntu.com/python3-pil.imagetk](https://packages.ubuntu.com/python3-pil.imagetk)  
+[https://packages.ubuntu.com/python3-cairosvg](https://packages.ubuntu.com/python3-cairosvg)  
+
+Puede que xsct esté disponible en otras Distribuciones, pero debe buscar cómo instalar las dependencias correctamente, como en:
+
+Software Opensuse
+https://software.opensuse.org/package/xsct
 
 ## Inicio del programa
 
