@@ -3,27 +3,42 @@ Una GUI (Interfaz Gráfica de Usuario) para xsct (para establecer la temperatura
 
 **xsct** es un pequeño programa en C para cambiar la temperatura de color de la pantalla. Se puede utilizar para reducir o aumentar la cantidad de luz azul que produce la pantalla.
 
-La herramienta xsct establece la temperatura de color de la pantalla a través de xrandr como redshift. A diferencia de redshift, solo tiene 80 líneas de C y no cambiará la temperatura de la pantalla automáticamente.
+La herramienta xsct establece la temperatura de color de la pantalla a través de xrandr así como lo hace redshift. A diferencia de redshift, solo tiene 80 líneas de C y no cambiará la temperatura de la pantalla automáticamente.
 
 # Tutorial de uso: xsct GUI
 
-Este tutorial te guiará a través del uso de la interfaz gráfica para el programa xsct, que te permite ajustar la temperatura de color y el brillo de tu monitor en Linux Debian 12 o derivados de ellos como MX Linux 23 y puede que funcione en otras versiones u otros Linux.
+Este tutorial te guiará a través del uso de xsct_gui el cual es una interfaz gráfica para el programa xsct, que te permite ajustar la temperatura de color y el brillo de tu monitor en Linux
+
+# xsct está disponible en las siguientes Distribuciones Linux
+Este tutorial es para Distribuciones Linux que usan el sistema de paquetería deb como son:
+
+Debian 12 en adelante (como en MX Linux 23, antiX 23)
+https://packages.debian.org/xsct
+
+Ubuntu 24.04 en adelante
+https://packages.ubuntu.com/xsct
+
+
+Puede que xsct esté disponible en otras Distribuciones, pero debe buscar cómo instalar las dependencias correctamente, como en:
+
+Software Opensuse
+https://software.opensuse.org/package/xsct
+
 
 ## Requisitos previos
 
-Antes de comenzar, asegúrate de tener instalado lo siguiente:
+Es necesario tener instalado lo siguiente:
+
+```
+sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
+```
 
 1. Python 3
 2. Tkinter (paquete python3-tk)
 3. python3-pil.imagetk (Biblioteca de imagenes)
 4. El programa xsct
+5. python3-cairosvg (SVG parser)
 5. Papirus Icon Theme
-
-Puedes instalar los paquetes necesarios con el siguiente comando:
-
-```
-sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
-```
 
 **Nota**: En mi Sistema Linux Debian 12 tengo instalado además los siguientes paquetes: python3-all-dev tk-dev python3-full idle pero parece que no son necesarios.
 
