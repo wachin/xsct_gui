@@ -7,7 +7,7 @@
 
 This program helps you **adjust the color and brightness of your screen** on Linux, making it more comfortable to look at — especially at night.
 
-It’s like adding a “warm light filter” (similar to your phone’s night mode) to reduce eye strain and make late-night screen time easier on your eyes.
+It’s like adding a “warm light filter” (similar to your phone’s night mode that diminishes the blue light) to reduce eye strain and make late-night screen time easier on your eyes.
 
 `xsct_gui` is a **graphical interface** for [xsct](https://github.com/faf0/sct), a small command-line tool that changes your screen’s color temperature using `xrandr`.
 

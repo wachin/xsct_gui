@@ -7,7 +7,7 @@
 
 Este programa te ayuda a **cambiar el color y el brillo de tu pantalla** en Linux, para que sea más cómoda de ver, especialmente por la noche. 
 
-Es como agregar un “filtro de luz cálida” (similar al modo nocturno de tu teléfono) para reducir la fatiga visual y hacer que el uso de pantallas a altas horas de la noche sea más llevadero para tus ojos.
+Es como agregar un “filtro de luz cálida” (similar al modo nocturno de tu teléfono que reduce la lúz azúl) para reducir la fatiga visual y hacer que el uso de pantallas a altas horas de la noche sea más llevadero para tus ojos.
 
 `xsct_gui` es una interfáz gráfica para [xsct](https://github.com/faf0/sct), una pequeña herramienta de línea de comandos que cambia la temperatura de color de la pantalla usando `xrandr`.
 
