@@ -227,5 +227,5 @@ y ahora si:
 python3 xsct_gui.py
 ```
 
-Dios les bendiga
+> 🙏 Dios les bendiga
 
