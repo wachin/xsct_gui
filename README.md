@@ -20,7 +20,7 @@ Es como ponerle un "filtro de luz cálida" (como el modo nocturno de tu celular)
 
 ## 🧰 Lo que necesitas tener instalado
 
-Necesitas un Sistema Operativo que use X11 como Administrador de Ventanas
+Necesitas un Sistema Operativo que use o pueda usar X11 como Administrador de Ventanas y no Wayland
 
 Antes de usar este programa, asegúrate de que tu computadora tenga instalado lo siguiente:
 
@@ -42,38 +42,29 @@ sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 | **Papirus Icon Theme**             | Da el ícono bonito a la ventana.                             |
 
 ### Ubuntu
-Si usas Ubuntu y sus sabores, esos paquetes están en los repositorios desde:
+Si usas Ubuntu y sus sabores, en los que se pueda iniciar sesión con X11, esos paquetes están en los repositorios desde:
 
+- [https://packages.ubuntu.com/xsct](https://packages.ubuntu.com/xsct) **Desde noble (24.04LTS)**
+- [https://packages.ubuntu.com/papirus-icon-theme](https://packages.ubuntu.com/papirus-icon-theme) Desde jammy (22.04LTS)
 - [https://packages.ubuntu.com/python3](https://packages.ubuntu.com/python3) Desde jammy (22.04LTS)
-- [https://packages.ubuntu.com/python3-tk](https://packages.ubuntu.com/python3-tk) Desde jammy (22.04LTS) 
-- [https://packages.ubuntu.com/xsct](https://packages.ubuntu.com/xsct) Desde noble (24.04LTS) 
+- [https://packages.ubuntu.com/python3-tk](https://packages.ubuntu.com/python3-tk) Desde jammy (22.04LTS)  
 - [https://packages.ubuntu.com/python3-pil.imagetk](https://packages.ubuntu.com/python3-pil.imagetk) Desde jammy (22.04LTS) 
 - [https://packages.ubuntu.com/python3-cairosvg](https://packages.ubuntu.com/python3-cairosvg) Desde jammy (22.04LTS)
 
+**Nota:** Linux Mint está basado en Ubuntu, puede que allí también tengan estos paquetes esos nombres.
+
 
 ### Debian
-Si usas Debian y sus derivados como MX Linux, antiX, etc, esos paquetes están en los repositorios desde:
+Si usas Debian y sus derivados como MX Linux, antiX, etc, en los que se pueda iniciar sesión con X11, esos paquetes están en los repositorios desde:
+ 
+* [https://packages.debian.org/xsct](https://packages.debian.org/xsct) **desde Debian 12** 
+* [https://packages.debian.org/papirus-icon-theme](https://packages.debian.org/papirus-icon-theme) Desde Debian 10 
+* [https://packages.debian.org/python3](https://packages.debian.org/python3) Desde Debian 10 
+* [https://packages.debian.org/python3-tk](https://packages.debian.org/python3-tk) Desde Debian 10  
+* [https://packages.debian.org/python3-pil.imagetk](https://packages.debian.org/python3-pil.imagetk) Desde Debian 10 
+* [https://packages.debian.org/python3-cairosvg](https://packages.debian.org/python3-cairosvg) Desde Debian 10 
 
-xsct desde Debian 12 (también en MX Linux 23, antiX 23 y otros basados en este)  
-[https://packages.debian.org/xsct](https://packages.debian.org/xsct)
-
-Desde Debian 10  
-[https://packages.debian.org/papirus-icon-theme](https://packages.debian.org/papirus-icon-theme)  
-[https://packages.debian.org/python3](https://packages.debian.org/python3)  
-[https://packages.debian.org/python3-tk](https://packages.debian.org/python3-tk)  
-[https://packages.debian.org/python3-pil.imagetk](https://packages.debian.org/python3-pil.imagetk)  
-[https://packages.debian.org/python3-cairosvg](https://packages.debian.org/python3-cairosvg)  
-
-
-
-
-
-Si usas Ubuntu esos paquetes están en los repositorios desde:
-
-
-
-
-> El ícono se verá bien si tienes instalado **Papirus**. Si no, igual funciona, pero sin ícono.
+**Nota:** MX Linux 23, antiX 23 y otros están basados en Debian 12
 
 ---
 
@@ -155,8 +146,8 @@ También puedes hacer clic en el botón **"Acerca de..."** para ver información
 
 ## 📚 Más información
 
-- 🐍 Código del programa: [https://github.com/wachin/xsct_gui](https://github.com/wachin/xsct_gui)
-- ⚙️ El programa xsct: [https://github.com/faf0/sct](https://github.com/faf0/sct)
+- 🐍 Código del programa GUI: [https://github.com/wachin/xsct_gui](https://github.com/wachin/xsct_gui)
+- ⚙️ El programa CLI "xsct": [https://github.com/faf0/sct](https://github.com/faf0/sct)
 
 ---
 
@@ -175,3 +166,50 @@ Este programa fue creado por **Washington Indacochea** (wachin.id@gmail.com), co
 
 ✅ Listo. Ahora ya sabes cómo usar `xsct_gui`.  
 ¡Abre la terminal y prueba cambiar el color de tu pantalla especialmente en la noche! 🌈🖥️
+
+# Para Instalar en Debian 11 bullseye, Debian 10 buster, compilar sct
+Necesitamos las siguientes dependencias para poder compilar el código fuente y que se pueda instalar xsct en Debian 11, 10:
+
+```bash
+sudo apt install libx11-dev libxrandr-dev
+```
+Luego, clone el repositorio de xsct:
+
+```
+git clone https://github.com/faf0/sct
+```
+y entre allí
+```
+cd sct
+```
+y compilelo:
+
+```
+make
+```
+
+no se demora mucho en compilar, es rapidísimo, e instálelo:
+
+```
+sudo make install
+```
+aquí pongo una captura de pantalla:
+
+![](src/vx_images/02-sct-compilado-en-debian-11-10.png)
+
+## Dependencias para xsct_gui en Debian 11, 10
+1. Para usar la interfáz gráfica para xsct necesitamos instalar:
+```bash
+sudo apt install python3 python3-tk python3-pil.imagetk python3-cairosvg
+```
+y ahora si:
+
+2. Navega hasta el directorio donde guardaste el archivo `xsct_gui.py`.
+3. Ejecuta el siguiente comando:  
+
+```python
+python3 xsct_gui.py
+```
+
+Dios les bendiga
+
