@@ -1,4 +1,9 @@
-# 🖥️ xsct_gui – Easy Screen Light Control (for X11 Window Manager)
+# 🖥️ xsct_gui 
+[![Topic](https://img.shields.io/badge/topic-linux%20x11%20gui-blueviolet)](https://github.com/topics/linux)
+
+[LEEME EN ESPAÑOL](README_ES.md)
+
+## 🖥️ xsct_gui– Easy Screen Light Control (for X11 Window Manager)
 
 This program helps you **adjust the color and brightness of your screen** on Linux, making it more comfortable to look at — especially at night.
 
@@ -61,25 +66,31 @@ sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 
 ---
 
-### 🐧 Linux Distribution Support
+## 🐧 Linux Distribution Support
 
-#### Ubuntu (and flavors like Kubuntu, Xubuntu, etc.)
-The packages are available starting from:
-- Ubuntu 22.04 LTS (jammy) and newer
-- xsct available since 24.04 LTS (noble)
+### Ubuntu (and flavors like Kubuntu, Xubuntu, etc.)
+If you're using Ubuntu and its flavors that support X11 logins, those packages are available in the repositories:
 
-🔗 [Ubuntu Packages](https://packages.ubuntu.com/)
+- [https://packages.ubuntu.com/xsct](https://packages.ubuntu.com/xsct) **Since Noble (24.04LTS)**
+- [https://packages.ubuntu.com/papirus-icon-theme](https://packages.ubuntu.com/papirus-icon-theme) Since Jammy (22.04LTS)
+- [https://packages.ubuntu.com/python3](https://packages.ubuntu.com/python3) Since Jammy (22.04LTS)
+- [https://packages.ubuntu.com/python3-tk](https://packages.ubuntu.com/python3-tk) Since Jammy (22.04LTS)
+- [https://packages.ubuntu.com/python3-pil.imagetk](https://packages.ubuntu.com/python3-pil.imagetk) Since jammy (22.04LTS)
+- [https://packages.ubuntu.com/python3-cairosvg](https://packages.ubuntu.com/python3-cairosvg) Since jammy (22.04LTS)
 
-> 📌 Linux Mint is based on Ubuntu — these instructions likely work there too.
+📌 **Note:** Linux Mint is based on Ubuntu, so these packages may have those names there as well.
 
-#### Debian (and derivatives like MX Linux, antiX)
-Available in Debian 12 and newer:
-- `xsct` since Debian 12
-- Other packages since Debian 10
+### Debian (and derivatives like MX Linux, antiX)
+If you're using Debian and its derivatives like MX Linux, antiX, etc., where you can log in with X11, those packages are available in the repositories:
 
-🔗 [Debian Packages](https://packages.debian.org/)
+* [https://packages.debian.org/xsct](https://packages.debian.org/xsct) **since Debian 12**
+* [https://packages.debian.org/papirus-icon-theme](https://packages.debian.org/papirus-icon-theme) since Debian 10
+* [https://packages.debian.org/python3](https://packages.debian.org/python3) since Debian 10
+* [https://packages.debian.org/python3-tk](https://packages.debian.org/python3-tk) since Debian 10
+* [https://packages.debian.org/python3-pil.imagetk](https://packages.debian.org/python3-pil.imagetk) Since Debian 10
+* [https://packages.debian.org/python3-cairosvg](https://packages.debian.org/python3-cairosvg) Since Debian 10
 
-> 📌 MX Linux 23 and antiX 23 are based on Debian 12 — everything works out of the box.
+📌 **Note:** MX Linux 23, antiX 23, and others are based on Debian 12
 
 ---
 
@@ -89,7 +100,11 @@ Available in Debian 12 and newer:
 1. Make sure `Launcher.sh` is executable:
    - Right-click the file → **Properties** → **Permissions**
    - Check “Allow executing file as program”
-2. Double-click `Launcher.sh` to run it.
+2. Double-click `Launcher.sh` to run it
+
+👉 A window will open with two sliders.
+
+![](src/vx_images/01-xsct_guit-main-window.webp)
 
 ### Option 2: Run from terminal
 1. Open a terminal (`Ctrl + Alt + T`)
@@ -202,3 +217,4 @@ Now go ahead and try changing your screen color — especially at night! 🌈�
 Enjoy a more comfortable computing experience!
 
 > 🙏 God bless you all.
+

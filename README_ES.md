@@ -1,10 +1,15 @@
-# 🖥️ xsct_gui – Fácil control de la luz de tu pantalla (para X11 Window Manager)
+# 🖥️ xsct_gui
+
+[![Topic](https://img.shields.io/badge/topic-linux%20x11%20gui-blueviolet)](https://github.com/topics/linux)
+
+
+## 🖥️ xsct_gui – Fácil control de la luz de tu pantalla (para X11 Window Manager)
 
 Este programa te ayuda a **cambiar el color y el brillo de tu pantalla** en Linux, para que sea más cómoda de ver, especialmente por la noche. 
 
-Es como ponerle un "filtro de luz cálida" (como el modo nocturno de tu celular) para que no canse tanto los ojos.
+Es como agregar un “filtro de luz cálida” (similar al modo nocturno de tu teléfono) para reducir la fatiga visual y hacer que el uso de pantallas a altas horas de la noche sea más llevadero para tus ojos.
 
-`xsct_gui` es una interfáz gráfica para [xsct](https://github.com/faf0/sct)
+`xsct_gui` es una interfáz gráfica para [xsct](https://github.com/faf0/sct), una pequeña herramienta de línea de comandos que cambia la temperatura de color de la pantalla usando `xrandr`.
 
 ---
 
@@ -20,25 +25,19 @@ Es como ponerle un "filtro de luz cálida" (como el modo nocturno de tu celular)
 
 ## 🧰 Lo que necesitas tener instalado
 
-Necesitas un Sistema Operativo que use o pueda usar X11 como Administrador de Ventanas y no Wayland, como
+Necesitará un sistema Linux con el **Gestor de Ventanas X11** (no Wayland).
 
-En el 2025 lo siguientes Sistemas Operativos todavía tienen como entrar en una sesión X11 en vez de Wayland:
+A partir de 2025, estos entornos de escritorio aún admiten sesiones X11:
 
-* GNOME
-* KDE
-* Linux Mint
+- GNOME
+- KDE
+- Linux Mint
+- XFCE
+- LXQt
+- LXDE
+- Openbox, Fluxbox, JWM y otros gestores de ventanas X11
 
-Gestores de ventanas X11 en los que se puede usar xsct_gui
-
-* XFCE
-* LXQT
-* LXDE
-* openbox
-* fluxbox
-* jwm
-* etc
-
-Antes de usar este programa, asegúrate de que tu computadora tenga instalado lo siguiente:
+> ❗ Esta herramienta **no funciona en Wayland**. Asegúrese de iniciar sesión con una sesión X11.
 
 ### ✅ Cómo instalar todo (en una sola línea)
 
@@ -56,6 +55,9 @@ sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 | **CairoSVG** (`python3-cairosvg`)  | Necesario para ver el ícono del programa.                    |
 | **xsct**                           | Es el programa que realmente cambia el color de tu pantalla. |
 | **Papirus Icon Theme**             | Da el ícono bonito a la ventana.                             |
+
+
+## 🐧 Soporte de distribución de Linux
 
 ### Ubuntu
 Si usas Ubuntu y sus sabores, en los que se pueda iniciar sesión con X11, esos paquetes están en los repositorios desde:
