@@ -108,14 +108,11 @@ If you're using Debian and its derivatives like MX Linux, antiX, etc., where you
 
 ### Option 2: Run from terminal
 1. Open a terminal (`Ctrl + Alt + T`)
-2. Go to the folder where you saved `xsct_gui.py`. For example:
-   ```bash
-   cd Downloads
-   ```
+2. Go to the folder where is the python file: `xsct_gui.py`.  Or open there the terminal from your File Manager
 3. Run the program:
-   ```bash
-   python3 xsct_gui.py
-   ```
+    ```bash
+    python3 xsct_gui.py
+    ```
 
 👉 A window will open with two sliders.
 
