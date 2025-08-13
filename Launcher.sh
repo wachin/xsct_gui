@@ -1,4 +1,4 @@
 #! /bin/bash
 
-cd /home/wachin/Dev-python/xsct_gui
+cd .
 python3 xsct_gui.py
