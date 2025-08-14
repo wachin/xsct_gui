@@ -1,9 +1,10 @@
-# 🖥️ xsct_gui 
+# 🌙  xsct_gui
+
 [![Topic](https://img.shields.io/badge/topic-linux%20x11%20gui-blueviolet)](https://github.com/topics/linux)
 
 [LEEME EN ESPAÑOL](README_ES.md)
 
-## 🖥️ xsct_gui– Easy Screen Light Control (for X11 Window Manager)
+## 🌙  xsct_gui – Easy Screen Light Control, for X11 Window Manager
 
 This program helps you **adjust the color and brightness of your screen** on Linux, making it more comfortable to look at — especially at night.
 
@@ -24,7 +25,7 @@ It’s like adding a “warm light filter” (similar to your phone’s night mo
 
 ---
 
-## 🧰 What you need to have installed
+## 💻 The Operating System you need
 
 You’ll need a Linux system using the **X11 Window Manager** (not Wayland).  
 As of 2025, these desktop environments still support X11 sessions:
@@ -41,26 +42,22 @@ As of 2025, these desktop environments still support X11 sessions:
 
 ### ✅ Required software
 
-Before using `xsct_gui`, make sure you have these installed:
-
-| Program | Purpose |
-|--------|--------|
-| **Python 3** | The programming language the GUI is written in. |
-| **Tkinter** (`python3-tk`) | Creates the window and buttons (GUI toolkit). |
-| **Pillow** (`python3-pil.imagetk`) | Displays the colorful gradient bars. |
-| **CairoSVG** (`python3-cairosvg`) | Allows the program to show SVG icons (like the app icon). |
-| **xsct** | The actual tool that changes your screen color. |
-| **Papirus Icon Theme** | Provides a nice app icon. |
-
----
-
-### 💻 How to install everything (one command)
-
-Open a terminal (`Ctrl + Alt + T`) and run:
+Before using `xsct_gui`, make sure you have these installed (open a terminal and run):
 
 ```bash
 sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 ```
+
+The following is a table with the description of each one
+
+|              Program               |                          Purpose                          |
+| ---------------------------------- | --------------------------------------------------------- |
+| **Python 3**                       | The programming language the GUI is written in.           |
+| **Tkinter** (`python3-tk`)         | Creates the window and buttons (GUI toolkit).             |
+| **Pillow** (`python3-pil.imagetk`) | Displays the colorful gradient bars.                      |
+| **CairoSVG** (`python3-cairosvg`)  | Allows the program to show SVG icons (like the app icon). |
+| **xsct**                           | The actual tool that changes your screen color.           |
+| **Papirus Icon Theme**             | Provides a nice app icon.                                 |
 
 > 📝 If you're using **Debian 11 (bullseye)** or **Debian 10 (buster)**, `xsct` isn't available. You'll need to compile it manually (see instructions at the end).
 
@@ -95,26 +92,60 @@ If you're using Debian and its derivatives like MX Linux, antiX, etc., where you
 ---
 
 ## ▶️ How to use the program
+First, you need to have the program in a folder on your Linux computer
 
-### Option 1: Run the `Launcher.sh` script
-1. Make sure `Launcher.sh` is executable:
-   - Right-click the file → **Properties** → **Permissions**
-   - Check “Allow executing file as program”
-2. Double-click `Launcher.sh` to run it
+### **1st OPTION: Download the repository**
+Go to the website:
 
-👉 A window will open with two sliders.
+[https://github.com/wachin/xsct_gui](https://github.com/wachin/xsct_gui)
 
-![](src/vx_images/01-xsct_guit-main-window.webp)
+click on the arrow-like dropdown in Code:
 
-### Option 2: Run from terminal
-1. Open a terminal (`Ctrl + Alt + T`)
-2. Go to the folder where is the python file: `xsct_gui.py`.  Or open there the terminal from your File Manager
-3. Run the program:
-    ```bash
-    python3 xsct_gui.py
-    ```
+**<>  Code ▼**
 
-👉 A window will open with two sliders.
+and click on:
+
+**Download ZIP**
+
+extract it, and inside the folder you'll find the `Launcher.sh` file
+or you can clone it:
+
+### **2nd OPTION: Clone the repository**
+
+**1.-** Since we already have git installed, open a terminal in a folder where you have Linux programs:
+
+```bash
+git clone https://github.com/wachin/xsct_gui  
+```
+
+and enter there with:
+
+```bash
+cd xsct_gui  
+```
+
+## Run the Launcher.sh file
+
+Make sure the `Launcher.sh` script is executable. In the file manager, right-click on it and in the "**Permissions**" tab make sure it "**is executable**"
+Double-click the `Launcher.sh` script
+
+👉 A window will open with two controls:
+
+![](https://blogger.googleusercontent.com/img/a/AVvXsEixMsvdzTpTY5ENvil5n1a9KoIlz3rWyYkq1qlxnS4OPN_47wJmk5uBqhvM1PZu0fhNqgRf8_ttnMRlyjxns5iyFEBqZ8CIiLk22lq6Ak86gAa0O9tOxqeIrjOOQKI1WHKq4JS-2_5tvUZPZNWLCeNrnDjh-9xw2fvz54a56Rvnc9R_59TVd8EEWi7aLdc=s16000-rw)
+
+> 💡 On some Linux you can right click on the `xsct_gui.py` file and open it with python.
+
+### Open the program with python using `python3 xsct_gui.py`
+
+**1.-** **Open a terminal**
+**2.-** **Go to the folder** where the `xsct_gui.py` file is located, or open a terminal there from your file manager
+**3.-** **Run the program** with this command:
+
+```bash
+python3 xsct_gui.py
+```
+
+👉 A window will open with two controls
 
 ---
 
