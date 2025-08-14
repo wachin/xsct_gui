@@ -123,11 +123,11 @@ y entra allí con:
 cd xsct_gui  
 ```
 
-## Ejecuta el archivo Launcher.sh
+## Ejecutando con Launcher.sh
 
 Asegúrate que el script `Launcher.sh`está como ejecutable, en el administrador de archivos dele clic derecho y en la pestaña "**Permisos**" asegúrese de que "**es ejecutable**"
 
-Dele doble clic al script `Launcher.sh`
+Dele doble clic al script `Launcher.sh` y clic en `Ejecutar`
 
 👉 Se abrirá una ventana con dos controles:
 

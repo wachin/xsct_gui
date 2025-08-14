@@ -127,7 +127,7 @@ cd xsct_gui
 ## Run the Launcher.sh file
 
 Make sure the `Launcher.sh` script is executable. In the file manager, right-click on it and in the "**Permissions**" tab make sure it "**is executable**"
-Double-click the `Launcher.sh` script
+Double-click the `Launcher.sh` script and click `Run`
 
 👉 A window will open with two controls:
 
