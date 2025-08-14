@@ -205,7 +205,7 @@ Absolutely! The program is written in **Python**, so you can open `xsct_gui.py` 
 
 ## 🙌 About this program
 
-Created by **Washington Indacochea** (wachin.id@gmail.com)  
+Created by **Washington Indacochea Delgado**
 License: **GNU GPL3** (free and open source)
 
 ✨ Thank you for using `xsct_gui`!  

@@ -204,7 +204,7 @@ También puedes hacer clic en el botón **"Acerca de..."** para ver información
 
 ## 🙌 Sobre este programa
 
-Este programa fue creado por **Washington Indacochea** (wachin.id@gmail.com), con licencia libre **GNU GPL3**
+Este programa fue creado por **Washington Indacochea Delgado**, con licencia libre **GNU GPL3**
 
 > ✨ ¡Gracias por usarlo!  
 > Que tu pantalla sea siempre cómoda para tus ojos. 👀💙
