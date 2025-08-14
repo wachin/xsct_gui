@@ -1,8 +1,5 @@
 # 🌙  xsct_gui
 
-[![Topic](https://img.shields.io/badge/topic-linux%20x11%20gui-blueviolet)](https://github.com/topics/linux)
-
-
 ## 🌙 xsct_gui – Fácil control de la luz de tu pantalla, para X11 Window Manager
 
 Este programa te ayuda a **cambiar el color y el brillo de tu pantalla** en Linux, para que sea más cómoda de ver, especialmente por la noche. 
