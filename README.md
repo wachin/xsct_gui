@@ -45,19 +45,19 @@ As of 2025, these desktop environments still support X11 sessions:
 Before using `xsct_gui`, make sure you have these installed (open a terminal and run):
 
 ```bash
-sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
+sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg python3-pyqt6.qtsvg
 ```
 
 The following is a table with the description of each one
 
-|              Program               |                          Purpose                          |
-| ---------------------------------- | --------------------------------------------------------- |
-| **Python 3**                       | The programming language the GUI is written in.           |
-| **Tkinter** (`python3-tk`)         | Creates the window and buttons (GUI toolkit).             |
-| **Pillow** (`python3-pil.imagetk`) | Displays the colorful gradient bars.                      |
-| **CairoSVG** (`python3-cairosvg`)  | Allows the program to show SVG icons (like the app icon). |
-| **xsct**                           | The actual tool that changes your screen color.           |
-| **Papirus Icon Theme**             | Provides a nice app icon.                                 |
+|                      Program                      |                                         Purpose                                         |
+| ----------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Python 3**                                    | The programming language the GUI is written in.                |
+| **Tkinter** (`python3-tk`)                 | Creates the window and buttons (GUI toolkit).                     |
+| **Pillow** (`python3-pil.imagetk`)    | Displays the colorful gradient bars.                                       |
+| **CairoSVG** (`python3-cairosvg`) | Allows the program to show SVG icons (like the app icon). |
+| **xsct**                                            | The actual tool that changes your screen color.                   |
+| **Papirus Icon Theme**                 | Provides a nice app icon.                                                      |
 
 > 📝 If you're using **Debian 11 (bullseye)** or **Debian 10 (buster)**, `xsct` isn't available. You'll need to compile it manually (see instructions at the end).
 
