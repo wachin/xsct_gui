@@ -1,10 +1,10 @@
-# 🌙  xsct_gui
+# xsct_gui
 
 [![Topic](https://img.shields.io/badge/topic-linux%20x11%20gui-blueviolet)](https://github.com/topics/linux)
 
 [LEEME EN ESPAÑOL](README_ES.md)
 
-## 🌙  xsct_gui – Easy Screen Light Control, for X11 Window Manager
+## xsct_gui – Easy Screen Light Control, for X11 Window Manager
 
 This program helps you **adjust the color and brightness of your screen** on Linux, making it more comfortable to look at — especially at night.
 
@@ -14,7 +14,7 @@ It’s like adding a “warm light filter” (similar to your phone’s night mo
 
 ---
 
-# 🆕 🐍 Available GUI Versions
+# Available GUI Versions
 
 This project now includes **two graphical versions**:
 
@@ -23,14 +23,14 @@ This project now includes **two graphical versions**:
 | 🟢 Classic | Tkinter    | `xsct_gui.py`       |
 | 🔵 Modern   | PyQt6      | `xsct_gui_pyqt6.py` |
 
-### 💡 Which one should I use?
+### Which one should I use?
 
 * 🟢 **Tkinter version** → lighter, fewer dependencies
 * 🔵 **PyQt6 version** → more modern, better UI, more scalable
 
 ---
 
-## 🎯 What does this program do?
+## What does this program do?
 
 * 🔆 **Adjusts screen color**: Make your screen more orange (warm) or more white (cool).
 * 💡 **Controls brightness**: Make the screen dimmer or brighter.
@@ -41,7 +41,7 @@ This project now includes **two graphical versions**:
 
 ---
 
-## 💻 The Operating System you need
+## The Operating System you need
 
 You’ll need a Linux system using the **X11 Window Manager** (not Wayland).
 As of 2025, these desktop environments still support X11 sessions:
@@ -58,9 +58,9 @@ As of 2025, these desktop environments still support X11 sessions:
 
 ---
 
-# 📦 Required software
+# Required software
 
-## 🟢 Tkinter Version
+## Tkinter Version
 
 ```bash
 sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
@@ -77,7 +77,7 @@ sudo apt install python3 python3-tk xsct python3-pil.imagetk python3-cairosvg
 
 ---
 
-## 🔵 PyQt6 Version
+## PyQt6 Version
 
 ```bash
 sudo apt install python3 python3-pyqt6 python3-pyqt6.qtsvg xsct
@@ -98,22 +98,65 @@ sudo apt install papirus-icon-theme
 
 ---
 
-## 🐧 Linux Distribution Support
 
-*(Se mantiene intacto mi contenido original)*
+## For development in a Python virtual environment
 
-Si estás usando Debian / MX Linux:
+Some developers may need to use `venv`, for example when working with Qt Creator in a Python project.
 
-* xsct → disponible desde Debian 12
-* PyQt6 → disponible en repos oficiales
+### Create a virtual environment
 
-📌 **MX Linux 23** es totalmente compatible con ambas versiones
+In Debian 12 and MX Linux 23, support for virtual environments is not installed by default.
+
+**✅ Solution**
+
+Install the required package:
+
+```bash
+sudo apt install python3-venv
+````
+
+Open a terminal in the Python project folder:
+
+```bash
+cd /path/to/the-python-project
+```
+
+and once you are there, in a Linux terminal run:
+
+```bash
+python3 -m venv venv
+```
+
+then activate the environment with:
+
+```bash
+source venv/bin/activate
+```
+
+Install the dependencies:
+
+```bash
+pip install PyQt6
+```
+
+#### How to deactivate the venv? (skip this if you are still working in your virtual environment)
+
+After you finish what you were developing, to leave the virtual environment, in the terminal you will see something similar to this:
+
+```bash
+(venv) youruser@yourmachine:...
+```
+
+To exit the virtual environment, simply run:
+
+```bash
+deactivate
+```
 
 ---
 
-## ▶️ How to use the program
 
-*(Se mantiene tu contenido original y añadimos la versión PyQt6)*
+## How to use the program
 
 ### Run Tkinter version
 
@@ -126,16 +169,15 @@ python3 xsct_gui.py
 ```bash
 python3 xsct_gui_pyqt6.py
 ```
-
 ---
 
-# 🚀 Autostart (Run at startup)
+# Autostart (Run at startup)
 
 You can configure the program to run automatically when your system starts.
 
 ---
 
-## 🟢 Tkinter Autostart Launcher
+## Tkinter Autostart Launcher
 
 ### Create file:
 
@@ -157,7 +199,7 @@ X-GNOME-Autostart-enabled=true
 
 ---
 
-## 🔵 PyQt6 Autostart Launcher
+## PyQt6 Autostart Launcher
 
 ### Create file:
 
@@ -179,7 +221,7 @@ X-GNOME-Autostart-enabled=true
 
 ---
 
-# 💡 Optional: Make scripts executable
+# Optional: Make scripts executable
 
 Add this line at the top of both scripts:
 
@@ -202,25 +244,24 @@ Exec=/home/wachin/Dev/xsct_gui/xsct_gui_pyqt6.py
 
 ---
 
-## 🎛️ Interface Controls
+## Interface Controls
 
-*(Se mantiene intacto mi contenido original)*
 
----
-
-## 🔁 Are changes applied automatically?
-
-*(Se mantiene intacto mi contenido original)*
 
 ---
 
-## 💡 Tips for best results
+## Are changes applied automatically?
 
-*(Se mantiene intacto mi contenido original)*
 
 ---
 
-## 🛠️ Can I modify the program?
+## Tips for best results
+
+
+
+---
+
+## Can I modify the program?
 
 Now you can modify **both versions**:
 
@@ -231,24 +272,23 @@ Now you can modify **both versions**:
 
 ---
 
-## 📚 More information
+## More information
 
 * 🐍 **GUI Source Code**: [https://github.com/wachin/xsct_gui](https://github.com/wachin/xsct_gui)
 * ⚙️ **xsct**: [https://github.com/faf0/sct](https://github.com/faf0/sct)
 
 ---
 
-## 🙌 About this program
+## About this program
 
 Created by **Washington Indacochea Delgado**
 License: **GNU GPL3**
 
 ---
 
-## 📝 Notes
+## Notes
 
-✅ You're all set!
-Now go ahead and try changing your screen color — especially at night! 🖥️
+
 
 ---
 
