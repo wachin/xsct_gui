@@ -45,15 +45,17 @@ As of 2025, these desktop environments still support X11 sessions:
 ## Install dependencies
 
 ```bash
-sudo apt install python3 python3-pyqt6 python3-pyqt6.qtsvg xsct
+sudo apt install python3 python3-pyqt6 python3-pyqt6.qtsvg pyqt6-dev-tools qt6-l10n-tools xsct
 ```
 
-|   Program   |         Purpose          |
-| ----------- | ------------------------ |
-| Python 3    | The programming language |
-| PyQt6       | Modern GUI framework     |
-| PyQt6 QtSvg | SVG icon support         |
-| xsct        | Screen color control     |
+|        Package        |              Purpose               |
+| --------------------- | ---------------------------------- |
+| Python 3              | The programming language           |
+| PyQt6                 | Modern GUI framework               |
+| PyQt6 QtSvg           | SVG icon support                   |
+| pyqt6-dev-tools       | Provides `pylupdate6` (extracts translatable strings) |
+| qt6-l10n-tools        | Provides `lrelease` (compiles translations to `.qm`) |
+| xsct                  | Screen color control               |
 
 
 ## How to use the program
@@ -63,6 +65,14 @@ sudo apt install python3 python3-pyqt6 python3-pyqt6.qtsvg xsct
 ```bash
 python3 xsct_gui.py
 ```
+
+Alternatively, you can use the included `Launcher.sh` script:
+
+```bash
+bash Launcher.sh
+```
+
+> Make it executable first if needed: `chmod +x Launcher.sh`
 
 
 # Autostart (Run at startup)
@@ -86,7 +96,7 @@ Content:
 Type=Application
 Name=xsct_gui (PyQt6)
 Comment=Control de luz de pantalla (PyQt6)
-Exec=python3 /home/wachin/Dev/xsct_gui/xsct_gui_pyqt6.py
+Exec=python3 /home/wachin/Dev/xsct_gui/xsct_gui.py
 Terminal=false
 X-GNOME-Autostart-enabled=true
 ```
@@ -113,7 +123,7 @@ X-GNOME-Autostart-enabled=true
 
 ✅ **Yes!** As soon as you move a slider, the change takes effect immediately.
 
-You can also click the **"About..."** button to see information about the program.
+You can also click the **"About..."** button to see information about the program. When running in Spanish, the button and dialog will appear as **"Acerca de..."**.
 
 ---
 
@@ -129,6 +139,71 @@ You can also click the **"About..."** button to see information about the progra
 
 ---
 
+## Translating the program into another language
+
+The program uses **Qt Linguist** for internationalization. Translation files live in the `translations/` folder.
+
+### How it works
+
+| File | Purpose |
+|------|---------|
+| `translations/xsct_gui_es.ts` | Spanish translation source (XML, human-editable) |
+| `translations/xsct_gui_es.qm` | Compiled binary loaded at runtime |
+
+The filename suffix is the [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `es` for Spanish, `fr` for French, `de` for German). You can also use a full locale like `fr_FR` or `pt_BR`.
+
+### Step 1 — Create a new `.ts` file for your language
+
+Run `pylupdate6` to extract all translatable strings from the source and create a fresh `.ts` file. Replace `fr` with your language code:
+
+```bash
+pylupdate6 xsct_gui.py -ts translations/xsct_gui_fr.ts
+```
+
+### Step 2 — Translate the strings
+
+Open the `.ts` file with **Qt Linguist** (GUI tool):
+
+```bash
+linguist translations/xsct_gui_fr.ts
+```
+
+Or edit it directly in any text editor — it is plain XML. For each `<message>` block, fill in the `<translation>` tag with your translated text:
+
+```xml
+<message>
+    <source>About...</source>
+    <translation>À propos...</translation>
+</message>
+```
+
+### Step 3 — Compile to `.qm`
+
+Once all strings are translated, compile the `.ts` file into the binary `.qm` format that Qt loads at runtime:
+
+```bash
+lrelease translations/xsct_gui_fr.ts -qm translations/xsct_gui_fr.qm
+```
+
+### Step 4 — Test your translation
+
+Run the program on a system whose locale matches your language, or temporarily override the locale:
+
+```bash
+LANG=fr_FR.UTF-8 python3 xsct_gui.py
+```
+
+### Keeping translations up to date
+
+When the source code changes and new strings are added, re-run `pylupdate6` to merge the new strings into your existing `.ts` file without losing already-translated entries:
+
+```bash
+pylupdate6 xsct_gui.py -ts translations/xsct_gui_fr.ts
+```
+
+Then translate the new entries and recompile with `lrelease`.
+
+---
 
 ## Can I modify the program?
 

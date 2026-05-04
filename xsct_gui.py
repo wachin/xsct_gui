@@ -4,7 +4,7 @@ import os
 import sys
 import subprocess
 
-from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtCore import Qt, QTranslator, QLocale, QLibraryInfo, QCoreApplication
 from PyQt6.QtGui import (
     QPixmap,
     QPainter,
@@ -32,42 +32,31 @@ from PyQt6.QtWidgets import (
 class AboutDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Acerca de xsct_gui")
+        self.setWindowTitle(self.tr("About xsct_gui"))
         self.setMinimumSize(430, 430)
 
         layout = QVBoxLayout(self)
 
         text = QTextBrowser()
         text.setOpenExternalLinks(True)
-        text.setHtml("""
-        <h2>xsct_gui</h2>
-
-        <p>Una <i>GUI</i> (Interfaz Gráfica de Usuario) para xsct,
-        para reducir o aumentar la cantidad de luz azul que produce la pantalla.</p>
-
-        <p>Copyright 2024 Washington Indacochea Delgado.<br>
-        wachin.id@gmail.com<br>
-        Licencia: GNU GPL3.</p>
-
-        <p>Este programa permite ajustar fácilmente la temperatura de color y el brillo
-        de su pantalla, ayudando a reducir la fatiga visual y mejorar su experiencia
-        de uso del ordenador.</p>
-
-        <p><i>Para más información, visite:</i></p>
-
-        <p>
-        xsct_gui una GUI para xsct<br>
-        <a href="https://github.com/wachin/xsct_gui">https://github.com/wachin/xsct_gui</a>
-        </p>
-
-        <p>
-        Xsct (X11 set color temperature)<br>
-        <a href="https://github.com/faf0/sct">https://github.com/faf0/sct</a>
-        </p>
-        """)
+        text.setHtml(self.tr(
+            "<h2>xsct_gui</h2>"
+            "<p>A <i>GUI</i> (Graphical User Interface) for xsct, "
+            "to reduce or increase the amount of blue light produced by the screen.</p>"
+            "<p>Copyright 2024 Washington Indacochea Delgado.<br>"
+            "linuxfrontier@proton.me<br>"
+            "License: GNU GPL3.</p>"
+            "<p>This program lets you easily adjust the color temperature and brightness "
+            "of your screen, helping reduce eye strain and improve your computing experience.</p>"
+            "<p><i>For more information, visit:</i></p>"
+            "<p>xsct_gui – a GUI for xsct<br>"
+            "<a href=\"https://github.com/wachin/xsct_gui\">https://github.com/wachin/xsct_gui</a></p>"
+            "<p>Xsct (X11 set color temperature)<br>"
+            "<a href=\"https://github.com/faf0/sct\">https://github.com/faf0/sct</a></p>"
+        ))
         layout.addWidget(text)
 
-        close_button = QPushButton("Cerrar")
+        close_button = QPushButton(self.tr("Close"))
         close_button.clicked.connect(self.accept)
         layout.addWidget(close_button)
 
@@ -97,13 +86,13 @@ class GradientLabel(QLabel):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("xsct GUI")
+        self.setWindowTitle(self.tr("xsct GUI"))
         self.setFixedSize(420, 260)
 
         self.temp_min = 2000
         self.temp_max = 6500
 
-        # Guardamos brillo en milésimas para usar slider entero
+        # Store brightness in thousandths to use an integer slider
         self.brightness_min = 300
         self.brightness_max = 1000
 
@@ -129,7 +118,7 @@ class MainWindow(QMainWindow):
 
         temp_top_row = QHBoxLayout()
         temp_min_label = QLabel("2000 K")
-        self.temperature_label = QLabel("Temperature (K): 6500")
+        self.temperature_label = QLabel(self.tr("Temperature (K): 6500"))
         self.temperature_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         temp_top_row.addWidget(temp_min_label)
@@ -164,7 +153,7 @@ class MainWindow(QMainWindow):
 
         bright_top_row = QHBoxLayout()
         bright_min_label = QLabel("0.300")
-        self.brightness_label = QLabel("Brightness: 1.000")
+        self.brightness_label = QLabel(self.tr("Brightness: 1.000"))
         self.brightness_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         bright_top_row.addWidget(bright_min_label)
@@ -197,7 +186,7 @@ class MainWindow(QMainWindow):
         row = QHBoxLayout()
         row.addStretch()
 
-        about_button = QPushButton("Acerca de...")
+        about_button = QPushButton(self.tr("About..."))
         about_button.clicked.connect(self.show_about)
         row.addWidget(about_button)
 
@@ -239,10 +228,14 @@ class MainWindow(QMainWindow):
         temperature = self.get_temperature()
         brightness = self.get_brightness()
 
-        self.temperature_label.setText(f"Temperature (K): {temperature}")
+        self.temperature_label.setText(
+            self.tr("Temperature (K): %1").replace("%1", str(temperature))
+        )
         self.temperature_value.setText(str(temperature))
 
-        self.brightness_label.setText(f"Brightness: {brightness:.3f}")
+        self.brightness_label.setText(
+            self.tr("Brightness: %1").replace("%1", f"{brightness:.3f}")
+        )
         self.brightness_value.setText(f"{brightness:.3f}")
 
     def apply_xsct(self):
@@ -257,10 +250,12 @@ class MainWindow(QMainWindow):
         except FileNotFoundError:
             QMessageBox.critical(
                 self,
-                "Error",
-                "No se encontró el comando 'xsct'.\n\n"
-                "Instálalo con:\n"
-                "sudo apt install xsct"
+                self.tr("Error"),
+                self.tr(
+                    "The 'xsct' command was not found.\n\n"
+                    "Install it with:\n"
+                    "sudo apt install xsct"
+                )
             )
 
     def on_values_changed(self):
@@ -274,6 +269,25 @@ class MainWindow(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
+
+    # Load Qt built-in translations (buttons, dialogs, etc.)
+    qt_translator = QTranslator(app)
+    qt_translations_path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
+    locale = QLocale.system().name()          # e.g. "es_EC", "fr_FR"
+    language = QLocale.system().name()[:2]    # e.g. "es", "fr"
+
+    if qt_translator.load(f"qtbase_{locale}", qt_translations_path) or \
+       qt_translator.load(f"qtbase_{language}", qt_translations_path):
+        app.installTranslator(qt_translator)
+
+    # Load application translations from the translations/ folder
+    app_translator = QTranslator(app)
+    translations_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "translations")
+
+    if app_translator.load(f"xsct_gui_{locale}", translations_dir) or \
+       app_translator.load(f"xsct_gui_{language}", translations_dir):
+        app.installTranslator(app_translator)
+
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
